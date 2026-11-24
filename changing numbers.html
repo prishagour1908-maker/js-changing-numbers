@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            text-align: center;
+            background-image: linear-gradient(to right, coral,pink);
+            color: white;
+            font-family: cursive;
+            font-size:45px;
+        }
+        .box{
+            border:3px solid black;
+            background-color: white;
+            font-size: 50px;
+            border-radius: 10px;
+            height: 300px;
+            width: 300px;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <!-- In this project, you will create a Random number app, which stops changing on an odd-numbered click and starts changing on an even-numbered click. -->
+    <br>
+    <h1><strong><b><i>Random Changing Number App</i></b></strong></h1>
+    <br>
+    <center>
+    <div id="box" class="box"></div>
+    </center>
+    <br>
+    <button onclick="button()">Click To Start/Stop</button>
+
+    <script>
+        var count = 0;
+        var time = setInterval(startTime,1000);;
+
+        function startTime(){
+            document.getElementById('box').innerHTML = Math.floor(Math.random()*100)
+        }
+
+        function button(){
+            count = count+1;
+
+        if(count % 2 == 1){
+           clearInterval(time);
+        } else {
+          time = setInterval(startTime,1000)
+        }
+        }
+    </script>
+</body>
+</html>
